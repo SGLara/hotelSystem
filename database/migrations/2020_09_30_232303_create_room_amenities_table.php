@@ -13,10 +13,16 @@ class CreateRoomAmenitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('room_amenities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::create(
+            'room_amenities', 
+            function (Blueprint $table) {
+                $table->unsignedBigInteger('room_id')->index();
+                $table->unsignedBigInteger('amenity_id')->index();
+
+                $table->foreign('room_id')->references('id')->on('rooms');
+                $table->foreign('amenity_id')->references('id')->on('amenities');
+            }
+        );
     }
 
     /**

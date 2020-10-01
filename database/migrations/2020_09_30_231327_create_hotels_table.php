@@ -13,10 +13,27 @@ class CreateHotelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hotels', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::create(
+            'hotels',
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('name')->index();
+                $table->string('email')->unique();
+                $table->integer('phone');
+                $table->integer('fax');
+                $table->string('address');
+                $table->unsignedBigInteger('country_id')->index();
+                $table->unsignedBigInteger('state_id')->index();
+                $table->unsignedBigInteger('city_id')->index();
+                $table->string('logo_url');
+                $table->timestamps();
+                $table->timestamp('deleted_at');
+
+                $table->foreign('country_id')->references('id')->on('countries');
+                $table->foreign('state_id')->references('id')->on('states');
+                $table->foreign('city_id')->references('id')->on('cities');
+            }
+        );
     }
 
     /**

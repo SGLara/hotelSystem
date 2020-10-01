@@ -13,10 +13,14 @@ class CreateRoomsTable extends Migration
      */
     public function up()
     {
-        Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::create(
+            'rooms', 
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('type');
+                $table->unsignedTinyInteger('max_ocuppancy');
+            }
+        );
     }
 
     /**

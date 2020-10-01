@@ -13,10 +13,15 @@ class CreateAmenitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('amenities', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+        Schema::create(
+            'amenities', 
+            function (Blueprint $table) {
+                $table->id();
+                $table->string('name')->index();
+                $table->timestamps();
+                $table->timestamp('deleted_at');
+            }
+        );
     }
 
     /**
