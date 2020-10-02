@@ -19,6 +19,7 @@ class CreateReservationsTable extends Migration
                 $table->id();
                 $table->integer('confirmation_number')->index();
                 $table->string('guest_member_id')->index();
+                $table->enum('status',['active', 'cancelled']);
                 $table->unsignedBigInteger('hotel_id')->index();
                 $table->unsignedBigInteger('room_id')->index();
                 $table->unsignedTinyInteger('ocuppancy');
