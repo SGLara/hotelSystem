@@ -14,12 +14,13 @@ class Room extends Model
         'max_ocuppancy',
     ];
 
-    public function reservation(){
+    public function reservation()
+    {
         return $this->belongsTo(Reservation::class);
     }
 
-    // CHECK HOW I CAN ADD THIS RELATIONSHIP
-    // public function room(){
-    //     return $this->belongsTo(Reservation::class);
-    // }
+    public function amenities()
+    {
+        return $this->belongsToMany(Amenity::class);
+    }
 }

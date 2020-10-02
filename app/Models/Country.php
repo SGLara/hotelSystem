@@ -13,15 +13,18 @@ class Country extends Model
         'name',
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 
-    public function hotels(){
+    public function hotels()
+    {
         return $this->hasMany(Hotel::class);
     }
 
-    public function states(){
+    public function states()
+    {
         return $this->hasMany(State::class);
     }
 }

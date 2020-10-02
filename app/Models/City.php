@@ -13,15 +13,18 @@ class City extends Model
         'name',
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 
-    public function hotels(){
+    public function hotels()
+    {
         return $this->hasMany(Hotel::class);
     }
 
-    public function state(){
+    public function state()
+    {
         return $this->belongsTo(State::class);
     }
 }

@@ -13,15 +13,18 @@ class State extends Model
         'country_id'
     ];
 
-    public function users(){
+    public function users()
+    {
         return $this->hasMany(User::class);
     }
 
-    public function hotels(){
+    public function hotels()
+    {
         return $this->hasMany(Hotel::class);
     }
 
-    public function country(){
+    public function country()
+    {
         return $this->belongsTo(Country::class);
     }
 }

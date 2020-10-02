@@ -18,19 +18,23 @@ class Hotel extends Model
         'logo_url',
     ];
 
-    public function reservations(){
+    public function reservations()
+    {
         return $this->hasMany(Reservation::class);
     }
 
-    public function country(){
+    public function country()
+    {
         return $this->belongsTo(Country::class);
     }
 
-    public function state(){
+    public function state()
+    {
         return $this->belongsTo(State::class);
     }
 
-    public function city(){
+    public function city()
+    {
         return $this->belongsTo(City::class);
     }
 }
