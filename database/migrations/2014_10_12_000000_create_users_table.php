@@ -32,11 +32,7 @@ class CreateUsersTable extends Migration
                 $table->string('password');
                 $table->rememberToken();
                 $table->timestamps();
-                $table->timestamp('deleted_at');
-
-                $table->foreign('country_id')->references('id')->on('countries');
-                $table->foreign('state_id')->references('id')->on('states');
-                $table->foreign('city_id')->references('id')->on('cities');
+                $table->timestamp('deleted_at')->nullable();
             }
         );
     }

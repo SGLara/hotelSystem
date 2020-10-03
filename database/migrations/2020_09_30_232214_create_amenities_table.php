@@ -19,7 +19,7 @@ class CreateAmenitiesTable extends Migration
                 $table->id();
                 $table->string('name')->index();
                 $table->timestamps();
-                $table->timestamp('deleted_at');
+                $table->timestamp('deleted_at')->nullable();
             }
         );
     }

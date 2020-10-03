@@ -26,7 +26,7 @@ class CreateReservationsTable extends Migration
                 $table->date('checkin_date')->index();
                 $table->date('checkout_date')->index();
                 $table->timestamps();
-                $table->timestamp('deleted_at');
+                $table->timestamp('deleted_at')->nullable();
 
                 $table->foreign('guest_member_id')->references('member_id')->on('users');
                 $table->foreign('hotel_id')->references('id')->on('hotels');

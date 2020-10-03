@@ -27,7 +27,7 @@ class CreateHotelsTable extends Migration
                 $table->unsignedBigInteger('city_id')->index();
                 $table->string('logo_url');
                 $table->timestamps();
-                $table->timestamp('deleted_at');
+                $table->timestamp('deleted_at')->nullable();
 
                 $table->foreign('country_id')->references('id')->on('countries');
                 $table->foreign('state_id')->references('id')->on('states');
