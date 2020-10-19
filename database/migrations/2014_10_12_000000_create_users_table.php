@@ -22,13 +22,13 @@ class CreateUsersTable extends Migration
                 $table->string('last_name')->index();
                 $table->string('email')->unique();
                 $table->timestamp('email_verified_at')->nullable();
-                $table->integer('phone')->index();
-                $table->string('address');
+                $table->integer('phone')->index()->nullable();
+                $table->string('address')->nullable();
                 $table->unsignedBigInteger('country_id')->index()->nullable();
                 $table->unsignedBigInteger('state_id')->index()->nullable();
                 $table->unsignedBigInteger('city_id')->index()->nullable();
-                $table->integer('zipcode')->index();
-                $table->unsignedBigInteger('points')->default(0);
+                $table->integer('zipcode')->index()->nullable();
+                $table->unsignedBigInteger('points')->default(0)->nullable();
                 $table->string('password');
                 $table->rememberToken();
                 $table->timestamps();
