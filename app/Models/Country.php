@@ -13,6 +13,9 @@ class Country extends Model
         'name',
     ];
 
+    public $timestamps = false;
+
+    //Relationships
     public function users()
     {
         return $this->hasMany(User::class);

@@ -13,6 +13,9 @@ class State extends Model
         'country_id'
     ];
 
+    public $timestamps = false;
+
+    //Relationships
     public function users()
     {
         return $this->hasMany(User::class);

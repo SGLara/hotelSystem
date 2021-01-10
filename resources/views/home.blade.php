@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="col text-center">
-                            <input type="submit" class="btn btn-dark align-items-center btn-lg mt-4" value="Buscar"></input>
+                            <input type="submit" class="btn btn-dark align-items-center btn-lg mt-4" value="Buscar">
                         </div>
                     </form>
                 </div>
