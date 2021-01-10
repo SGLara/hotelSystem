@@ -14,18 +14,19 @@
                     </div>
                     @endif
 
-                    <form action="{{ route('home') }}" method="GET">
+                    <form action="{{ route('hotels') }}" method="GET">
                         @csrf
                         <div class="form-row p-4">
                             <input class="@error('destination') is-invalid @enderror form-control text-center col-4" type="text" name="destination" id="destination" placeholder="Destination">
 
                             <div class="col dropdown">
-                                <button type="button" class="form-control bg-white text-black dropdown-toggle" data-toggle="dropdown">
+                                {{-- <button type="button" class="form-control bg-white text-black dropdown-toggle" data-toggle="dropdown">
                                     Ciudad
-                                </button>
-                                <div class="dropdown-menu" name="city" id="city">
-                                    <option class="dropdown-item" value="Ciudad">Ciudad</option>
-                                </div>
+                                </button> --}}
+                                <select class="form-control" name="city" id="city">
+                                    <option class="dropdown-item" selected>Ciudades</option>
+                                    <option class="dropdown-item" value="algo mas">Algo mas</option>
+                                </select>
                             </div>
 
                             <div class="col dropdown">
@@ -42,7 +43,8 @@
                                     Pais
                                 </button>
                                 <div class="dropdown-menu" name="country" id="country">
-                                    <option class="dropdown-item" value="Pais">Pais</option>
+                                    <option class="dropdown-item" value="">Pais</option>
+                                    <option class="dropdown-item" value="Santa Ana">Santa Ana</option>
                                 </div>
                             </div>
 
